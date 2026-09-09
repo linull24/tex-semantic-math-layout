@@ -1,0 +1,20 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\begin{document}
+残差比较的正负对照实验用如下不等式刻画。
+
+\begin{equation}\label{eq:residual}
+G(r) = L_{\mathrm{null}} - L_{\mathrm{XGB}} = \frac{1}{n}\sum_{i=1}^{n}\left( y_i - \bar{y} \right)^2 - \frac{1}{n}\sum_{i=1}^{n}\left( y_i - \hat{f}_{\mathrm{XGB}}(x_i) \right)^2 \ge \frac{1}{n}\sum_{i=1}^{n}\left( y_i - \hat{f}_{\mathrm{lin}}(x_i) \right)^2 + \frac{1}{n}\sum_{i=1}^{n}\left( \hat{f}_{\mathrm{lin}}(x_i) - \hat{f}_{\mathrm{XGB}}(x_i) \right)^2
+\end{equation}
+
+同时需要检验多个不等式是否同时成立。
+
+\begin{equation}
+L_{\mathrm{XGB}} \le L_{\mathrm{null}}, \qquad L_{\mathrm{XGB}} \le L_{\mathrm{lin}}, \qquad L_{\mathrm{res}} = L_{\mathrm{null}} - L_{\mathrm{XGB}} \ge 0, \qquad \frac{L_{\mathrm{XGB}}}{L_{\mathrm{null}}} \le 1 - \delta
+\end{equation}
+\end{document}

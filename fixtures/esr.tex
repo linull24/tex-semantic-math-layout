@@ -1,0 +1,16 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\begin{document}
+描述长度准则下的目标函数由似然项与复杂度惩罚项构成。
+
+\begin{equation}\label{eq:mdl}
+\mathcal{L}(\theta) = \frac{1}{2}\log\left(2\pi\sigma^2\right) + \frac{1}{2\sigma^2}\sum_{i=1}^{n}\left(y_i - f_\theta(x_i)\right)^2 + \frac{1}{2}\log\left|\Sigma_\theta\right| + \frac{d}{2}\log(2\pi) + \lambda\sum_{j=1}^{p}\left|\theta_j\right| + \frac{n}{2}\log\left(\frac{1}{n}\sum_{i=1}^{n}\left(y_i - \hat{y}_i\right)^2\right)
+\end{equation}
+
+上式即为 MDL 形式的负对数似然。
+\end{document}

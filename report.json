@@ -1,0 +1,510 @@
+{
+  "overflow_count": 0,
+  "changed_equations": 15,
+  "compile_failures": 0,
+  "average_lines": 2.066666666666667,
+  "deep_break_count": 1,
+  "roundtrip_failures": 0,
+  "max_line_utilization": 0.9752776592760312,
+  "mean_line_utilization": 0.606755892101397,
+  "min_line_utilization": 0.11251089003655644,
+  "number_of_breaks": 16,
+  "average_break_ast_depth": 0.0625,
+  "equations": [
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "continuation-unanchored",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.6303003019632698,
+        0.7616680422290363
+      ],
+      "fixture": "bayes.tex"
+    },
+    {
+      "index": 1,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.6823479605260571
+      ],
+      "skipReason": "fits",
+      "fixture": "bayes.tex"
+    },
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "continuation",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.4834183137481999,
+        0.5456044230863305
+      ],
+      "fixture": "diffusion.tex"
+    },
+    {
+      "index": 1,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.5241009268631724
+      ],
+      "skipReason": "fits",
+      "fixture": "diffusion.tex"
+    },
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "continuation",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.583637271001705,
+        0.5263930597586425
+      ],
+      "fixture": "esr.tex"
+    },
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "continuation-unanchored",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.5104968189484099,
+        0.5893610792679997
+      ],
+      "fixture": "kalman.tex"
+    },
+    {
+      "index": 1,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.5077191443509286
+      ],
+      "skipReason": "fits",
+      "fixture": "kalman.tex"
+    },
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "continuation",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.6882208097102015,
+        0.494563477163933
+      ],
+      "fixture": "kkt.tex"
+    },
+    {
+      "index": 1,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.7448989070940424
+      ],
+      "skipReason": "fits",
+      "fixture": "kkt.tex"
+    },
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "continuation-unanchored",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.3417556352349073,
+        0.9752776592760312
+      ],
+      "fixture": "koopman.tex"
+    },
+    {
+      "index": 1,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.5310597868031726
+      ],
+      "skipReason": "fits",
+      "fixture": "koopman.tex"
+    },
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "continuation",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.6600222680530672,
+        0.4612866490463765
+      ],
+      "fixture": "lyapunov.tex"
+    },
+    {
+      "index": 1,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.6156119625578461
+      ],
+      "skipReason": "fits",
+      "fixture": "lyapunov.tex"
+    },
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "continuation-unanchored",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.34648558110944044,
+        0.9338673266964399
+      ],
+      "fixture": "matrix.tex"
+    },
+    {
+      "index": 1,
+      "kind": "equation",
+      "pattern": "continuation-unanchored",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.4838710159259392,
+        0.7201174991588579
+      ],
+      "fixture": "matrix.tex"
+    },
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "continuation",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.6466636987351688,
+        0.6252200824739941
+      ],
+      "fixture": "nash.tex"
+    },
+    {
+      "index": 1,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.6417539592110264
+      ],
+      "skipReason": "fits",
+      "fixture": "nash.tex"
+    },
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "continuation-unanchored",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.6503630327034874,
+        0.5635221727525481
+      ],
+      "fixture": "network-flow.tex"
+    },
+    {
+      "index": 1,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.6817023947877108
+      ],
+      "skipReason": "fits",
+      "fixture": "network-flow.tex"
+    },
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.5228490051194732
+      ],
+      "skipReason": "fits",
+      "fixture": "pathological.tex"
+    },
+    {
+      "index": 1,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.8614390859444618
+      ],
+      "skipReason": "fits",
+      "fixture": "pathological.tex"
+    },
+    {
+      "index": 2,
+      "kind": "equation",
+      "pattern": "continuation",
+      "changed": true,
+      "overflow": false,
+      "lines": 3,
+      "breaks": 2,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.7446770920331073,
+        0.6559671249782892,
+        0.6559671249782892
+      ],
+      "fixture": "pathological.tex"
+    },
+    {
+      "index": 3,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.5266737004021864
+      ],
+      "skipReason": "fits",
+      "fixture": "pathological.tex"
+    },
+    {
+      "index": 4,
+      "kind": "equation",
+      "pattern": "continuation-unanchored",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.8995134720139487,
+        0.45558276415701454
+      ],
+      "fixture": "pathological.tex"
+    },
+    {
+      "index": 5,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [],
+      "skipReason": "already-structured",
+      "fixture": "pathological.tex"
+    },
+    {
+      "index": 6,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.3682547589687652
+      ],
+      "skipReason": "fits",
+      "fixture": "pathological.tex"
+    },
+    {
+      "index": 7,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.47873858269138286
+      ],
+      "skipReason": "fits",
+      "fixture": "pathological.tex"
+    },
+    {
+      "index": 8,
+      "kind": "equation",
+      "pattern": "continuation-unanchored",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 1,
+      "deepBreaks": 1,
+      "lineUtilization": [
+        0.747006106240452,
+        0.8253247691661514
+      ],
+      "fixture": "pathological.tex"
+    },
+    {
+      "index": 9,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.11251089003655644
+      ],
+      "skipReason": "fits",
+      "fixture": "pathological.tex"
+    },
+    {
+      "index": 0,
+      "kind": "equation",
+      "pattern": "continuation-unanchored",
+      "changed": true,
+      "overflow": false,
+      "lines": 2,
+      "breaks": 1,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.6039436512424071,
+        0.5310504291862228
+      ],
+      "fixture": "residual-xgb.tex"
+    },
+    {
+      "index": 1,
+      "kind": "equation",
+      "pattern": "single-line",
+      "changed": false,
+      "overflow": false,
+      "lines": 1,
+      "breaks": 0,
+      "avgBreakDepth": 0,
+      "deepBreaks": 0,
+      "lineUtilization": [
+        0.7699612192676145
+      ],
+      "skipReason": "fits",
+      "fixture": "residual-xgb.tex"
+    }
+  ]
+}

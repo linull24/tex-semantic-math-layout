@@ -1,0 +1,22 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\begin{document}
+双人零和博弈的极小极大解与正则化后的策略梯度如下。
+
+\begin{equation}\label{eq:minimax}
+\sigma^{\star} \in \argmax_{\sigma \in \Delta} \min_{\tau \in \Delta} \sum_{i \in S} \sum_{j \in T} \sigma_i \tau_j u_{ij} + \lambda \sum_{i \in S} \sigma_i \log \sigma_i - \mu \sum_{j \in T} \tau_j \log \tau_j + \eta \sum_{i \in S} \sum_{j \in T} \left( \sigma_i \tau_j \right)^2 - \kappa \left\| \sigma - \sigma^{\star} \right\|_1 + \gamma \left\| \nabla_\sigma \mathbb{E}\left[ u \right] \right\|^2 - \beta \sum_{i \in S} \sigma_i^2
+\end{equation}
+
+其中 $\Delta$ 为单纯形，$\lambda$ 与 $\mu$ 为正则化系数。
+
+\begin{equation}
+\Delta = \left\{ \sigma \in \mathbb{R}_{+}^{|S|} : \sum_{i \in S} \sigma_i = 1 \right\}, \qquad \nabla_{\sigma} \mathbb{E}\left[ u \right] = A \tau - \lambda \left( \log \sigma + 1 \right)
+\end{equation}
+\end{document}

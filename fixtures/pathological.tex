@@ -1,0 +1,72 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\newcommand{\myop}[1]{\operatorname{MyLongOperatorName}\left( #1 \right)}
+\begin{document}
+病态用例：单个分式已经超过版心宽度。
+
+\begin{equation}
+\frac{\sum_{i=1}^{n} \alpha_i x_i + \sum_{j=1}^{m} \beta_j y_j + \sum_{k=1}^{p} \gamma_k z_k + \sum_{l=1}^{q} \delta_l w_l}{\sum_{i=1}^{n} \epsilon_i x_i + \sum_{j=1}^{m} \zeta_j y_j + \sum_{k=1}^{p} \eta_k z_k} = 1
+\end{equation}
+
+极深嵌套函数，以及很长的 operatorname。
+
+\begin{equation}
+f\left( g\left( h\left( k\left( x_1 + x_2 + x_3 + x_4 + x_5 + x_6 + x_7 \right) \right) \right) \right) + \myop{x_1, x_2, x_3} = 0
+\end{equation}
+
+连续 24 个加法项。
+
+\begin{equation}
+S = a_{1} x_{1} + a_{2} x_{2} + a_{3} x_{3} + a_{4} x_{4} + a_{5} x_{5} + a_{6} x_{6} + a_{7} x_{7} + a_{8} x_{8} + a_{9} x_{9} + a_{10} x_{10} + a_{11} x_{11} + a_{12} x_{12} + a_{13} x_{13} + a_{14} x_{14} + a_{15} x_{15} + a_{16} x_{16} + a_{17} x_{17} + a_{18} x_{18} + a_{19} x_{19} + a_{20} x_{20} + a_{21} x_{21} + a_{22} x_{22} + a_{23} x_{23} + a_{24} x_{24}
+\end{equation}
+
+连续乘法（无显式运算符）。
+
+\begin{equation}
+M = A_{1} A_{2} A_{3} A_{4} A_{5} A_{6} A_{7} A_{8} A_{9} A_{10} A_{11} A_{12} A_{13} A_{14} A_{15} A_{16}
+\end{equation}
+
+自定义宏与 left/right 定界符。
+
+\begin{equation}
+\myop{\myop{a_1 + a_2 + a_3 + a_4} + \left( b_1 + b_2 + b_3 + b_4 \right)} = \left[ c_1 + c_2 + c_3 + c_4 + c_5 \right] + \left\{ d_1 + d_2 + d_3 \right\}
+\end{equation}
+
+以下公式已有手工 aligned，默认不得改动。
+
+\begin{equation}
+\begin{aligned}
+E &= m c^2 \\
+  &= \gamma m_0 c^2
+\end{aligned}
+\end{equation}
+
+cases 与 matrix 同样不得改动。
+
+\begin{equation}
+f(x) = \begin{cases} 1, & x > 0, \\ 0, & x \le 0. \end{cases}, \qquad A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
+\end{equation}
+
+带 label 与标点的公式。
+
+\begin{equation}\label{eq:punct}
+\sum_{i=1}^{n} \left( x_i - \bar{x} \right)^2 + \sum_{j=1}^{m} \left( y_j - \bar{y} \right)^2 + \sum_{k=1}^{p} \left( z_k - \bar{z} \right)^2 \le \sigma^2,
+\end{equation}
+
+病态用例：顶层只有等号，唯一可断行处位于普通括号内部（深度 1）。
+
+\begin{equation}
+( \alpha_{1} x_{1} + \alpha_{2} x_{2} + \alpha_{3} x_{3} + \alpha_{4} x_{4} + \alpha_{5} x_{5} + \alpha_{6} x_{6} + \alpha_{7} x_{7} + \alpha_{8} x_{8} + \alpha_{9} x_{9} + \alpha_{10} x_{10} + \alpha_{11} x_{11} + \alpha_{12} x_{12} + \alpha_{13} x_{13} + \alpha_{14} x_{14} + \alpha_{15} x_{15} + \alpha_{16} x_{16} + \alpha_{17} x_{17} + \alpha_{18} x_{18} ) = 1
+\end{equation}
+
+紧邻中文的公式：上式给出了全部离差平方和的界，下面是一个短公式。
+
+\begin{equation}
+e^{i\pi} + 1 = 0
+\end{equation}
+\end{document}

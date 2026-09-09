@@ -1,0 +1,21 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\begin{document}
+李雅普诺夫指数与混沌系统的上极限增长率由下式刻画。
+
+\begin{equation}\label{eq:lyapunov}
+\lambda_{\max}\left( A^{\top} P + P A + Q \right) \le -\gamma \norm{x(t)}^2 + \limsup_{T \to \infty} \frac{1}{T} \int_0^T \log \norm{\Phi(t, t_0)} \, \mathrm{d}t - \varepsilon \frac{\norm{x}^4}{1 + \norm{x}^2} + \int_0^t \left\| \nabla V(x(s)) \right\|^2 \, \mathrm{d}s - \delta \norm{x} \norm{\dot{x}}
+\end{equation}
+
+注意内部的大分式不应被随意切开，即使整体需要断行。
+
+\begin{equation}
+\dot{V}(x) = \frac{\partial V}{\partial x} f(x) + \frac{1}{2} \mathrm{tr}\left( \sigma(x)^{\top} \frac{\partial^2 V}{\partial x^2} \sigma(x) \right) \le -\alpha \norm{x}^2 + \frac{\beta}{1 + \norm{x}^2}
+\end{equation}
+\end{document}

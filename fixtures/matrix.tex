@@ -1,0 +1,22 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\newcommand{\trans}{^{\top}}
+\newcommand{\pinv}{^{\dagger}}
+\begin{document}
+投影矩阵与伪逆的块矩阵表示为如下形式。
+
+\begin{equation}\label{eq:projection}
+P = A \left( A\trans A + \lambda I \right)^{-1} A\trans = \begin{pmatrix} I_r & 0 \\ 0 & 0 \end{pmatrix} = U_r U_r\trans - \left( I - U_r U_r\trans \right) + 2 U_r U_r\trans - \left( I - U_r U_r\trans \right) + \sum_{k=1}^{r} \sigma_k u_k\trans v_k - \left( I - U_r U_r\trans \right) A \left( A\trans A + \lambda I \right)^{-1}
+\end{equation}
+
+零空间的正交基与奇异值分解的关系如下。
+
+\begin{equation}
+\mathcal{N}(A) = \left\{ x \in \mathbb{R}^n : A x = 0 \right\}, \qquad A\pinv = V_r \Sigma_r^{-1} U_r\trans = \sum_{k=1}^{r} \frac{1}{\sigma_k} v_k u_k\trans + \sum_{k=1}^{r} \sigma_k u_k\trans v_k - \left( I - U_r U_r\trans \right) A \left( A\trans A + \lambda I \right)^{-1} + \lambda \mathcal{N}(A)^{\perp}
+\end{equation}
+\end{document}

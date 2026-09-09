@@ -1,0 +1,22 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\E}{\mathbb{E}}
+\begin{document}
+扩散模型的验证指标涉及期望、平方根、嵌套函数与范数。
+
+\begin{equation}\label{eq:diffusion}
+\E\left[ \norm{ x_{t+1} - x_t }^2 \right] = \sqrt{\frac{2 \bar{\alpha}_t}{1 - \bar{\alpha}_t}} \cdot \E\left[ \norm{ \epsilon_\theta\left( x_t, t \right) - \epsilon }^2 \right] + \beta_t \norm{ \nabla_x \log p_t(x_t) }^2 + \frac{\beta_t}{2} \left\| \nabla_x \log p_t(x_t) - s_\theta(x_t, t) \right\|^2
+\end{equation}
+
+当信噪比趋于零时，前向过程收敛到标准正态分布。
+
+\begin{equation}
+\lim_{t \to T} q\left( x_t \mid x_0 \right) = \mathcal{N}\left( 0, I \right), \qquad \bar{\alpha}_t = \prod_{s=1}^{t} \left( 1 - \beta_s \right) \to 0
+\end{equation}
+\end{document}

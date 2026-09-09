@@ -1,0 +1,341 @@
+{
+  "equations": [
+    {
+      "id": "bayes-0",
+      "pattern": "continuation-unanchored",
+      "lines": 2,
+      "util": [
+        0.63,
+        0.762
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 1,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 69.55,
+        "B": 63.49,
+        "C": 121.65,
+        "D": 105.07
+      }
+    },
+    {
+      "id": "diffusion-0",
+      "pattern": "continuation",
+      "lines": 2,
+      "util": [
+        0.483,
+        0.546
+      ],
+      "overfull": {
+        "A": 0,
+        "D": 0,
+        "B": 1,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 68.53,
+        "B": 64.11,
+        "C": 65.36,
+        "D": 96.56
+      }
+    },
+    {
+      "id": "esr-0",
+      "pattern": "continuation",
+      "lines": 2,
+      "util": [
+        0.584,
+        0.526
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 1,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 70.36,
+        "B": 63.82,
+        "C": 65.08,
+        "D": 105.88
+      }
+    },
+    {
+      "id": "kalman-0",
+      "pattern": "continuation-unanchored",
+      "lines": 2,
+      "util": [
+        0.51,
+        0.589
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 1,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 57,
+        "B": 48.25,
+        "C": 59.98,
+        "D": 77.85
+      }
+    },
+    {
+      "id": "kkt-0",
+      "pattern": "continuation",
+      "lines": 2,
+      "util": [
+        0.688,
+        0.495
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 0,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 70.75,
+        "B": 0,
+        "C": 99.32,
+        "D": 109.28
+      }
+    },
+    {
+      "id": "koopman-0",
+      "pattern": "continuation-unanchored",
+      "lines": 2,
+      "util": [
+        0.342,
+        0.975
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 1,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 67.33,
+        "B": 59.27,
+        "C": 109.4,
+        "D": 92.01
+      }
+    },
+    {
+      "id": "lyapunov-0",
+      "pattern": "continuation",
+      "lines": 2,
+      "util": [
+        0.66,
+        0.461
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 1,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 68.53,
+        "B": 59.59,
+        "C": 91.41,
+        "D": 103.62
+      }
+    },
+    {
+      "id": "matrix-0",
+      "pattern": "continuation-unanchored",
+      "lines": 2,
+      "util": [
+        0.346,
+        0.934
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 0,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 68.68,
+        "B": 0,
+        "C": 110.13,
+        "D": 103.58
+      }
+    },
+    {
+      "id": "matrix-1",
+      "pattern": "continuation-unanchored",
+      "lines": 2,
+      "util": [
+        0.484,
+        0.72
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 0,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 67.33,
+        "B": 0,
+        "C": 131.05,
+        "D": 89.08
+      }
+    },
+    {
+      "id": "nash-0",
+      "pattern": "continuation",
+      "lines": 2,
+      "util": [
+        0.647,
+        0.625
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 1,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 65.38,
+        "B": 57.71,
+        "C": 83.31,
+        "D": 96.56
+      }
+    },
+    {
+      "id": "network-flow-0",
+      "pattern": "continuation-unanchored",
+      "lines": 2,
+      "util": [
+        0.65,
+        0.564
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 1,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 64.62,
+        "B": 57.63,
+        "C": 172.69,
+        "D": 92.46
+      }
+    },
+    {
+      "id": "pathological-1",
+      "pattern": "single-line",
+      "lines": 1,
+      "util": [
+        0.861
+      ],
+      "overfull": {
+        "A": 0,
+        "D": 0,
+        "B": 0,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 56.59,
+        "B": 48.25,
+        "C": 41.68,
+        "D": 0
+      }
+    },
+    {
+      "id": "pathological-2",
+      "pattern": "continuation",
+      "lines": 3,
+      "util": [
+        0.745,
+        0.656,
+        0.656
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 1,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 56.59,
+        "B": 48.25,
+        "C": 55.02,
+        "D": 97.23
+      }
+    },
+    {
+      "id": "pathological-4",
+      "pattern": "continuation-unanchored",
+      "lines": 2,
+      "util": [
+        0.9,
+        0.456
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 0,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 56.59,
+        "B": 0,
+        "C": 56.91,
+        "D": 75.33
+      }
+    },
+    {
+      "id": "pathological-8",
+      "pattern": "continuation-unanchored",
+      "lines": 2,
+      "util": [
+        0.747,
+        0.825
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 1,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 56.59,
+        "B": 48.25,
+        "C": 55.15,
+        "D": 75.33
+      }
+    },
+    {
+      "id": "residual-xgb-0",
+      "pattern": "continuation-unanchored",
+      "lines": 2,
+      "util": [
+        0.604,
+        0.531
+      ],
+      "overfull": {
+        "A": 1,
+        "D": 0,
+        "B": 1,
+        "C": 0
+      },
+      "heightPt": {
+        "A": 67.35,
+        "B": 59.27,
+        "C": 93.58,
+        "D": 102.86
+      }
+    }
+  ],
+  "compileFailures": []
+}

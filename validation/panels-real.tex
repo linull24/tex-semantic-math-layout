@@ -1,0 +1,279 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\newcommand{\trans}{^{\top}}
+\newcommand{\pinv}{^{\dagger}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\dplus}{\delta^{+}}
+\newcommand{\dminus}{\delta^{-}}
+\newcommand{\myop}[1]{\operatorname{MyLongOperatorName}\left( #1 \right)}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\diag}{diag}
+\newsavebox{\mlpanel}
+\newcommand{\mlmeasure}[2]{%
+  \setbox\mlpanel=\vbox{\hsize=\linewidth\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}%
+  #2}%
+  \typeout{PANELHEIGHT:#1:\the\ht\mlpanel}%
+  \par\unvbox\mlpanel\par}
+\allowdisplaybreaks
+\begin{document}
+\section*{Exact paper stack: original (A) vs math-layout (D)}
+\subsection*{bayes.tex eq.0 \textnormal{(continuation-unanchored, 2 lines)}}
+\typeout{PANELSTART:bayes-0-A}
+\paragraph{A: original}
+\mlmeasure{bayes-0-A}{\begin{equation*}
+p(\theta \mid \mathcal{D}) = \frac{p(\mathcal{D} \mid \theta) \, p(\theta)}{\int_{\Theta} p(\mathcal{D} \mid \vartheta) \, p(\vartheta) \, \mathrm{d}\vartheta} = \frac{\prod_{i=1}^{n} p(y_i \mid x_i, \theta) \, p(\theta)}{\E_{\vartheta \sim p(\vartheta)}\left[ \prod_{i=1}^{n} p(y_i \mid x_i, \vartheta) \right]} + \frac{1}{2}\log\left( \frac{\left| \Sigma_0 \right|}{\left| \Sigma_{\theta \mid \mathcal{D}} \right|} \right) + \mathrm{KL}\left( q(\theta) \,\|\, p(\theta) \right) + \sum_{i=1}^{n} \log p(y_i \mid x_i, \theta) - \frac{1}{2}\log \det \Sigma_{\theta \mid \mathcal{D}}
+\end{equation*}}
+\typeout{PANELEND:bayes-0-A}
+\typeout{PANELSTART:bayes-0-D}
+\paragraph{D: math-layout}
+\mlmeasure{bayes-0-D}{\begin{equation*}
+\begin{aligned}
+    &p(\theta \mid \mathcal{D}) = \frac{p(\mathcal{D} \mid \theta) \, p(\theta)}{\int_{\Theta} p(\mathcal{D} \mid \vartheta) \, p(\vartheta) \, \mathrm{d}\vartheta} = \frac{\prod_{i=1}^{n} p(y_i \mid x_i, \theta) \, p(\theta)}{\E_{\vartheta \sim p(\vartheta)}\left[ \prod_{i=1}^{n} p(y_i \mid x_i, \vartheta) \right]} \\
+    &\quad {}+ \frac{1}{2}\log\left( \frac{\left| \Sigma_0 \right|}{\left| \Sigma_{\theta \mid \mathcal{D}} \right|} \right) + \mathrm{KL}\left( q(\theta) \,\|\, p(\theta) \right) + \sum_{i=1}^{n} \log p(y_i \mid x_i, \theta) - \frac{1}{2}\log \det \Sigma_{\theta \mid \mathcal{D}}
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:bayes-0-D}
+\subsection*{diffusion.tex eq.0 \textnormal{(continuation, 2 lines)}}
+\typeout{PANELSTART:diffusion-0-A}
+\paragraph{A: original}
+\mlmeasure{diffusion-0-A}{\begin{equation*}
+\E\left[ \norm{ x_{t+1} - x_t }^2 \right] = \sqrt{\frac{2 \bar{\alpha}_t}{1 - \bar{\alpha}_t}} \cdot \E\left[ \norm{ \epsilon_\theta\left( x_t, t \right) - \epsilon }^2 \right] + \beta_t \norm{ \nabla_x \log p_t(x_t) }^2 + \frac{\beta_t}{2} \left\| \nabla_x \log p_t(x_t) - s_\theta(x_t, t) \right\|^2
+\end{equation*}}
+\typeout{PANELEND:diffusion-0-A}
+\typeout{PANELSTART:diffusion-0-D}
+\paragraph{D: math-layout}
+\mlmeasure{diffusion-0-D}{\begin{equation*}
+\begin{aligned}
+    \E\left[ \norm{ x_{t+1} - x_t }^2 \right] &= \sqrt{\frac{2 \bar{\alpha}_t}{1 - \bar{\alpha}_t}} \cdot \E\left[ \norm{ \epsilon_\theta\left( x_t, t \right) - \epsilon }^2 \right] \\
+    &\quad {}+ \beta_t \norm{ \nabla_x \log p_t(x_t) }^2 + \frac{\beta_t}{2} \left\| \nabla_x \log p_t(x_t) - s_\theta(x_t, t) \right\|^2
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:diffusion-0-D}
+\subsection*{esr.tex eq.0 \textnormal{(continuation, 2 lines)}}
+\typeout{PANELSTART:esr-0-A}
+\paragraph{A: original}
+\mlmeasure{esr-0-A}{\begin{equation*}
+\mathcal{L}(\theta) = \frac{1}{2}\log\left(2\pi\sigma^2\right) + \frac{1}{2\sigma^2}\sum_{i=1}^{n}\left(y_i - f_\theta(x_i)\right)^2 + \frac{1}{2}\log\left|\Sigma_\theta\right| + \frac{d}{2}\log(2\pi) + \lambda\sum_{j=1}^{p}\left|\theta_j\right| + \frac{n}{2}\log\left(\frac{1}{n}\sum_{i=1}^{n}\left(y_i - \hat{y}_i\right)^2\right)
+\end{equation*}}
+\typeout{PANELEND:esr-0-A}
+\typeout{PANELSTART:esr-0-D}
+\paragraph{D: math-layout}
+\mlmeasure{esr-0-D}{\begin{equation*}
+\begin{aligned}
+    \mathcal{L}(\theta) &= \frac{1}{2}\log\left(2\pi\sigma^2\right) + \frac{1}{2\sigma^2} \sum_{i=1}^{n}\left(y_i - f_\theta(x_i)\right)^2 + \frac{1}{2}\log\left|\Sigma_\theta\right| \\
+    &\quad {}+ \frac{d}{2}\log(2\pi) + \lambda \sum_{j=1}^{p}\left|\theta_j\right| + \frac{n}{2}\log\left(\frac{1}{n}\sum_{i=1}^{n}\left(y_i - \hat{y}_i\right)^2\right)
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:esr-0-D}
+\subsection*{kalman.tex eq.0 \textnormal{(continuation-unanchored, 2 lines)}}
+\typeout{PANELSTART:kalman-0-A}
+\paragraph{A: original}
+\mlmeasure{kalman-0-A}{\begin{equation*}
+P_{t|t} = P_{t|t-1} - P_{t|t-1} H_t\trans \left( H_t P_{t|t-1} H_t\trans + R_t \right)^{-1} H_t P_{t|t-1} + F_t P_{t-1|t-1} F_t\trans - K_t S_t K_t\trans + \Gamma_t u_t u_t\trans \Gamma_t\trans - \Phi_t \Sigma_{t|t-1} \Phi_t\trans + \Omega_t
+\end{equation*}}
+\typeout{PANELEND:kalman-0-A}
+\typeout{PANELSTART:kalman-0-D}
+\paragraph{D: math-layout}
+\mlmeasure{kalman-0-D}{\begin{equation*}
+\begin{aligned}
+    &P_{t|t} = P_{t|t-1} - P_{t|t-1} H_t\trans \left( H_t P_{t|t-1} H_t\trans + R_t \right)^{-1} H_t P_{t|t-1} \\
+    &\quad {}+ F_t P_{t-1|t-1} F_t\trans - K_t S_t K_t\trans + \Gamma_t u_t u_t\trans \Gamma_t\trans - \Phi_t \Sigma_{t|t-1} \Phi_t\trans + \Omega_t
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:kalman-0-D}
+\subsection*{kkt.tex eq.0 \textnormal{(continuation, 2 lines)}}
+\typeout{PANELSTART:kkt-0-A}
+\paragraph{A: original}
+\mlmeasure{kkt-0-A}{\begin{equation*}
+\mathcal{L}(x, \lambda, \nu) = f(x) + \sum_{i=1}^{m} \lambda_i g_i(x) + \sum_{j=1}^{p} \nu_j h_j(x) + \frac{\rho}{2} \sum_{i=1}^{m} \left( \max\{0, g_i(x)\} \right)^2 + \frac{\rho}{2} \sum_{j=1}^{p} h_j(x)^2 + \frac{\mu}{2} \left\| x - x^{\star} \right\|^2 + \sum_{i=1}^{m} \frac{\lambda_i^2}{2\rho} + \sum_{j=1}^{p} \frac{\nu_j^2}{2\rho}
+\end{equation*}}
+\typeout{PANELEND:kkt-0-A}
+\typeout{PANELSTART:kkt-0-D}
+\paragraph{D: math-layout}
+\mlmeasure{kkt-0-D}{\begin{equation*}
+\begin{aligned}
+    \mathcal{L}(x, \lambda, \nu) &= f(x) + \sum_{i=1}^{m} \lambda_i g_i(x) + \sum_{j=1}^{p} \nu_j h_j(x) + \frac{\rho}{2} \sum_{i=1}^{m} \left( \max\{0, g_i(x)\} \right)^2 \\
+    &\quad {}+ \frac{\rho}{2} \sum_{j=1}^{p} h_j(x)^2 + \frac{\mu}{2} \left\| x - x^{\star} \right\|^2 + \sum_{i=1}^{m} \frac{\lambda_i^2}{2\rho} + \sum_{j=1}^{p} \frac{\nu_j^2}{2\rho}
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:kkt-0-D}
+\subsection*{koopman.tex eq.0 \textnormal{(continuation-unanchored, 2 lines)}}
+\typeout{PANELSTART:koopman-0-A}
+\paragraph{A: original}
+\mlmeasure{koopman-0-A}{\begin{equation*}
+\tilde{A} = \tilde{U} \tilde{\Sigma} \tilde{V}\trans = \sum_{k=1}^{r} \tilde{\sigma}_k \tilde{u}_k \tilde{v}_k\trans = \Psi_X\pinv \Psi_Y = \left( \Psi_X\trans \Psi_X \right)^{-1} \Psi_X\trans \Psi_Y + \epsilon I + \epsilon \left( \Psi_X\trans \Psi_X + \lambda I \right)^{-1} \Psi_X\trans \Psi_Y + \left\| \Psi_Y - \Psi_X \tilde{A} \right\|_F^2 + \lambda \left\| \tilde{A} \right\|_* + \left\| \Psi_X\trans \Psi_X - I \right\|_F
+\end{equation*}}
+\typeout{PANELEND:koopman-0-A}
+\typeout{PANELSTART:koopman-0-D}
+\paragraph{D: math-layout}
+\mlmeasure{koopman-0-D}{\begin{equation*}
+\begin{aligned}
+    &\tilde{A} = \tilde{U} \tilde{\Sigma} \tilde{V}\trans = \sum_{k=1}^{r} \tilde{\sigma}_k \tilde{u}_k \tilde{v}_k\trans = \Psi_X\pinv \Psi_Y \\
+    &\quad = \left( \Psi_X\trans \Psi_X \right)^{-1} \Psi_X\trans \Psi_Y + \epsilon I + \epsilon \left( \Psi_X\trans \Psi_X + \lambda I \right)^{-1} \Psi_X\trans \Psi_Y + \left\| \Psi_Y - \Psi_X \tilde{A} \right\|_F^2 + \lambda \left\| \tilde{A} \right\|_* + \left\| \Psi_X\trans \Psi_X - I \right\|_F
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:koopman-0-D}
+\subsection*{lyapunov.tex eq.0 \textnormal{(continuation, 2 lines)}}
+\typeout{PANELSTART:lyapunov-0-A}
+\paragraph{A: original}
+\mlmeasure{lyapunov-0-A}{\begin{equation*}
+\lambda_{\max}\left( A^{\top} P + P A + Q \right) \le -\gamma \norm{x(t)}^2 + \limsup_{T \to \infty} \frac{1}{T} \int_0^T \log \norm{\Phi(t, t_0)} \, \mathrm{d}t - \varepsilon \frac{\norm{x}^4}{1 + \norm{x}^2} + \int_0^t \left\| \nabla V(x(s)) \right\|^2 \, \mathrm{d}s - \delta \norm{x} \norm{\dot{x}}
+\end{equation*}}
+\typeout{PANELEND:lyapunov-0-A}
+\typeout{PANELSTART:lyapunov-0-D}
+\paragraph{D: math-layout}
+\mlmeasure{lyapunov-0-D}{\begin{equation*}
+\begin{aligned}
+    \lambda_{\max}\left( A^{\top} P + P A + Q \right) &\le -\gamma \norm{x(t)}^2 + \limsup_{T \to \infty} \frac{1}{T} \int_0^T \log \norm{\Phi(t, t_0)} \, \mathrm{d}t \\
+    &\quad {}- \varepsilon \frac{\norm{x}^4}{1 + \norm{x}^2} + \int_0^t \left\| \nabla V(x(s)) \right\|^2 \, \mathrm{d}s - \delta \norm{x} \norm{\dot{x}}
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:lyapunov-0-D}
+\subsection*{matrix.tex eq.0 \textnormal{(continuation-unanchored, 2 lines)}}
+\typeout{PANELSTART:matrix-0-A}
+\paragraph{A: original}
+\mlmeasure{matrix-0-A}{\begin{equation*}
+P = A \left( A\trans A + \lambda I \right)^{-1} A\trans = \begin{pmatrix} I_r & 0 \\ 0 & 0 \end{pmatrix} = U_r U_r\trans - \left( I - U_r U_r\trans \right) + 2 U_r U_r\trans - \left( I - U_r U_r\trans \right) + \sum_{k=1}^{r} \sigma_k u_k\trans v_k - \left( I - U_r U_r\trans \right) A \left( A\trans A + \lambda I \right)^{-1}
+\end{equation*}}
+\typeout{PANELEND:matrix-0-A}
+\typeout{PANELSTART:matrix-0-D}
+\paragraph{D: math-layout}
+\mlmeasure{matrix-0-D}{\begin{equation*}
+\begin{aligned}
+    &P = A \left( A\trans A + \lambda I \right)^{-1} A\trans = \begin{pmatrix} I_r & 0 \\ 0 & 0 \end{pmatrix} \\
+    &\quad = U_r U_r\trans - \left( I - U_r U_r\trans \right) + 2 U_r U_r\trans - \left( I - U_r U_r\trans \right) + \sum_{k=1}^{r} \sigma_k u_k\trans v_k - \left( I - U_r U_r\trans \right) A \left( A\trans A + \lambda I \right)^{-1}
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:matrix-0-D}
+\subsection*{matrix.tex eq.1 \textnormal{(continuation-unanchored, 2 lines)}}
+\typeout{PANELSTART:matrix-1-A}
+\paragraph{A: original}
+\mlmeasure{matrix-1-A}{\begin{equation*}
+\mathcal{N}(A) = \left\{ x \in \mathbb{R}^n : A x = 0 \right\}, \qquad A\pinv = V_r \Sigma_r^{-1} U_r\trans = \sum_{k=1}^{r} \frac{1}{\sigma_k} v_k u_k\trans + \sum_{k=1}^{r} \sigma_k u_k\trans v_k - \left( I - U_r U_r\trans \right) A \left( A\trans A + \lambda I \right)^{-1} + \lambda \mathcal{N}(A)^{\perp}
+\end{equation*}}
+\typeout{PANELEND:matrix-1-A}
+\typeout{PANELSTART:matrix-1-D}
+\paragraph{D: math-layout}
+\mlmeasure{matrix-1-D}{\begin{equation*}
+\begin{aligned}
+    &\mathcal{N}(A) = \left\{ x \in \mathbb{R}^n : A x = 0 \right\}, \qquad A\pinv = V_r \Sigma_r^{-1} U_r\trans \\
+    &\quad = \sum_{k=1}^{r} \frac{1}{\sigma_k} v_k u_k\trans + \sum_{k=1}^{r} \sigma_k u_k\trans v_k - \left( I - U_r U_r\trans \right) A \left( A\trans A + \lambda I \right)^{-1} + \lambda \mathcal{N}(A)^{\perp}
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:matrix-1-D}
+\subsection*{nash.tex eq.0 \textnormal{(continuation, 2 lines)}}
+\typeout{PANELSTART:nash-0-A}
+\paragraph{A: original}
+\mlmeasure{nash-0-A}{\begin{equation*}
+\sigma^{\star} \in \argmax_{\sigma \in \Delta} \min_{\tau \in \Delta} \sum_{i \in S} \sum_{j \in T} \sigma_i \tau_j u_{ij} + \lambda \sum_{i \in S} \sigma_i \log \sigma_i - \mu \sum_{j \in T} \tau_j \log \tau_j + \eta \sum_{i \in S} \sum_{j \in T} \left( \sigma_i \tau_j \right)^2 - \kappa \left\| \sigma - \sigma^{\star} \right\|_1 + \gamma \left\| \nabla_\sigma \mathbb{E}\left[ u \right] \right\|^2 - \beta \sum_{i \in S} \sigma_i^2
+\end{equation*}}
+\typeout{PANELEND:nash-0-A}
+\typeout{PANELSTART:nash-0-D}
+\paragraph{D: math-layout}
+\mlmeasure{nash-0-D}{\begin{equation*}
+\begin{aligned}
+    \sigma^{\star} &\in \argmax_{\sigma \in \Delta} \min_{\tau \in \Delta} \sum_{i \in S} \sum_{j \in T} \sigma_i \tau_j u_{ij} + \lambda \sum_{i \in S} \sigma_i \log \sigma_i - \mu \sum_{j \in T} \tau_j \log \tau_j \\
+    &\quad {}+ \eta \sum_{i \in S} \sum_{j \in T} \left( \sigma_i \tau_j \right)^2 - \kappa \left\| \sigma - \sigma^{\star} \right\|_1 + \gamma \left\| \nabla_\sigma \mathbb{E}\left[ u \right] \right\|^2 - \beta \sum_{i \in S} \sigma_i^2
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:nash-0-D}
+\subsection*{network-flow.tex eq.0 \textnormal{(continuation-unanchored, 2 lines)}}
+\typeout{PANELSTART:network-flow-0-A}
+\paragraph{A: original}
+\mlmeasure{network-flow-0-A}{\begin{equation*}
+\sum_{a \in \dplus(v)} x_a - \sum_{a \in \dminus(v)} x_a = b_v, \qquad \forall v \in V, \qquad 0 \le x_a \le u_a, \qquad \forall a \in A, \qquad \sum_{v \in V} b_v = 0, \qquad \sum_{a \in A} c_a x_a \le C_{\max}, \qquad x_a \ge 0
+\end{equation*}}
+\typeout{PANELEND:network-flow-0-A}
+\typeout{PANELSTART:network-flow-0-D}
+\paragraph{D: math-layout}
+\mlmeasure{network-flow-0-D}{\begin{equation*}
+\begin{aligned}
+    &\sum_{a \in \dplus(v)} x_a - \sum_{a \in \dminus(v)} x_a = b_v, \qquad \forall v \in V, \qquad 0 \le x_a \le u_a, \qquad \forall a \\
+    &\quad \in A, \qquad \sum_{v \in V} b_v = 0, \qquad \sum_{a \in A} c_a x_a \le C_{\max}, \qquad x_a \ge 0
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:network-flow-0-D}
+\subsection*{pathological.tex eq.1 \textnormal{(single-line, 1 lines)}}
+\typeout{PANELSTART:pathological-1-A}
+\paragraph{A: original}
+\mlmeasure{pathological-1-A}{\begin{equation*}
+f\left( g\left( h\left( k\left( x_1 + x_2 + x_3 + x_4 + x_5 + x_6 + x_7 \right) \right) \right) \right) + \myop{x_1, x_2, x_3} = 0
+\end{equation*}}
+\typeout{PANELEND:pathological-1-A}
+\subsection*{pathological.tex eq.2 \textnormal{(continuation, 3 lines)}}
+\typeout{PANELSTART:pathological-2-A}
+\paragraph{A: original}
+\mlmeasure{pathological-2-A}{\begin{equation*}
+S = a_{1} x_{1} + a_{2} x_{2} + a_{3} x_{3} + a_{4} x_{4} + a_{5} x_{5} + a_{6} x_{6} + a_{7} x_{7} + a_{8} x_{8} + a_{9} x_{9} + a_{10} x_{10} + a_{11} x_{11} + a_{12} x_{12} + a_{13} x_{13} + a_{14} x_{14} + a_{15} x_{15} + a_{16} x_{16} + a_{17} x_{17} + a_{18} x_{18} + a_{19} x_{19} + a_{20} x_{20} + a_{21} x_{21} + a_{22} x_{22} + a_{23} x_{23} + a_{24} x_{24}
+\end{equation*}}
+\typeout{PANELEND:pathological-2-A}
+\typeout{PANELSTART:pathological-2-D}
+\paragraph{D: math-layout}
+\mlmeasure{pathological-2-D}{\begin{equation*}
+\begin{aligned}
+    S &= a_{1} x_{1} + a_{2} x_{2} + a_{3} x_{3} + a_{4} x_{4} + a_{5} x_{5} + a_{6} x_{6} + a_{7} x_{7} + a_{8} x_{8} + a_{9} x_{9} + a_{10} x_{10} \\
+    &\quad {}+ a_{11} x_{11} + a_{12} x_{12} + a_{13} x_{13} + a_{14} x_{14} + a_{15} x_{15} + a_{16} x_{16} + a_{17} x_{17} \\
+    &\quad {}+ a_{18} x_{18} + a_{19} x_{19} + a_{20} x_{20} + a_{21} x_{21} + a_{22} x_{22} + a_{23} x_{23} + a_{24} x_{24}
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:pathological-2-D}
+\subsection*{pathological.tex eq.4 \textnormal{(continuation-unanchored, 2 lines)}}
+\typeout{PANELSTART:pathological-4-A}
+\paragraph{A: original}
+\mlmeasure{pathological-4-A}{\begin{equation*}
+\myop{\myop{a_1 + a_2 + a_3 + a_4} + \left( b_1 + b_2 + b_3 + b_4 \right)} = \left[ c_1 + c_2 + c_3 + c_4 + c_5 \right] + \left\{ d_1 + d_2 + d_3 \right\}
+\end{equation*}}
+\typeout{PANELEND:pathological-4-A}
+\typeout{PANELSTART:pathological-4-D}
+\paragraph{D: math-layout}
+\mlmeasure{pathological-4-D}{\begin{equation*}
+\begin{aligned}
+    &\myop{\myop{a_1 + a_2 + a_3 + a_4} + \left( b_1 + b_2 + b_3 + b_4 \right)} \\
+    &\quad = \left[ c_1 + c_2 + c_3 + c_4 + c_5 \right] + \left\{ d_1 + d_2 + d_3 \right\}
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:pathological-4-D}
+\subsection*{pathological.tex eq.8 \textnormal{(continuation-unanchored, 2 lines)}}
+\typeout{PANELSTART:pathological-8-A}
+\paragraph{A: original}
+\mlmeasure{pathological-8-A}{\begin{equation*}
+( \alpha_{1} x_{1} + \alpha_{2} x_{2} + \alpha_{3} x_{3} + \alpha_{4} x_{4} + \alpha_{5} x_{5} + \alpha_{6} x_{6} + \alpha_{7} x_{7} + \alpha_{8} x_{8} + \alpha_{9} x_{9} + \alpha_{10} x_{10} + \alpha_{11} x_{11} + \alpha_{12} x_{12} + \alpha_{13} x_{13} + \alpha_{14} x_{14} + \alpha_{15} x_{15} + \alpha_{16} x_{16} + \alpha_{17} x_{17} + \alpha_{18} x_{18} ) = 1
+\end{equation*}}
+\typeout{PANELEND:pathological-8-A}
+\typeout{PANELSTART:pathological-8-D}
+\paragraph{D: math-layout}
+\mlmeasure{pathological-8-D}{\begin{equation*}
+\begin{aligned}
+    &( \alpha_{1} x_{1} + \alpha_{2} x_{2} + \alpha_{3} x_{3} + \alpha_{4} x_{4} + \alpha_{5} x_{5} + \alpha_{6} x_{6} + \alpha_{7} x_{7} + \alpha_{8} x_{8} + \alpha_{9} x_{9} + \alpha_{10} x_{10} \\
+    &\quad {}+ \alpha_{11} x_{11} + \alpha_{12} x_{12} + \alpha_{13} x_{13} + \alpha_{14} x_{14} + \alpha_{15} x_{15} + \alpha_{16} x_{16} + \alpha_{17} x_{17} + \alpha_{18} x_{18} ) = 1
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:pathological-8-D}
+\subsection*{residual-xgb.tex eq.0 \textnormal{(continuation-unanchored, 2 lines)}}
+\typeout{PANELSTART:residual-xgb-0-A}
+\paragraph{A: original}
+\mlmeasure{residual-xgb-0-A}{\begin{equation*}
+G(r) = L_{\mathrm{null}} - L_{\mathrm{XGB}} = \frac{1}{n}\sum_{i=1}^{n}\left( y_i - \bar{y} \right)^2 - \frac{1}{n}\sum_{i=1}^{n}\left( y_i - \hat{f}_{\mathrm{XGB}}(x_i) \right)^2 \ge \frac{1}{n}\sum_{i=1}^{n}\left( y_i - \hat{f}_{\mathrm{lin}}(x_i) \right)^2 + \frac{1}{n}\sum_{i=1}^{n}\left( \hat{f}_{\mathrm{lin}}(x_i) - \hat{f}_{\mathrm{XGB}}(x_i) \right)^2
+\end{equation*}}
+\typeout{PANELEND:residual-xgb-0-A}
+\typeout{PANELSTART:residual-xgb-0-D}
+\paragraph{D: math-layout}
+\mlmeasure{residual-xgb-0-D}{\begin{equation*}
+\begin{aligned}
+    &G(r) = L_{\mathrm{null}} - L_{\mathrm{XGB}} = \frac{1}{n} \sum_{i=1}^{n}\left( y_i - \bar{y} \right)^2 - \frac{1}{n} \sum_{i=1}^{n}\left( y_i - \hat{f}_{\mathrm{XGB}}(x_i) \right)^2 \\
+    &\quad \ge \frac{1}{n} \sum_{i=1}^{n}\left( y_i - \hat{f}_{\mathrm{lin}}(x_i) \right)^2 + \frac{1}{n} \sum_{i=1}^{n}\left( \hat{f}_{\mathrm{lin}}(x_i) - \hat{f}_{\mathrm{XGB}}(x_i) \right)^2
+  \end{aligned}
+\end{equation*}}
+\typeout{PANELEND:residual-xgb-0-D}
+\end{document}

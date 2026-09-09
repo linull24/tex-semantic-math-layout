@@ -1,0 +1,23 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\newcommand{\trans}{^{\top}}
+\begin{document}
+卡尔曼滤波的预测协方差按如下方式更新，这是状态空间模型的核心递推式之一。
+
+\begin{equation}\label{eq:kalman-update}
+P_{t|t} = P_{t|t-1} - P_{t|t-1} H_t\trans \left( H_t P_{t|t-1} H_t\trans + R_t \right)^{-1} H_t P_{t|t-1} + F_t P_{t-1|t-1} F_t\trans - K_t S_t K_t\trans + \Gamma_t u_t u_t\trans \Gamma_t\trans - \Phi_t \Sigma_{t|t-1} \Phi_t\trans + \Omega_t
+\end{equation}
+
+其中 $F_t$ 为状态转移矩阵，观测噪声协方差 $R_t$ 由下式给出。
+
+\begin{equation}
+R_t = \mathbb{E}\left[ v_t v_t\trans \right] + H_t \Sigma_{t|t-1} H_t\trans + \mathrm{diag}\left( \sigma_1^2, \sigma_2^2, \ldots, \sigma_m^2 \right)
+\end{equation}
+
+短公式不应被改动：$P_{t|t-1} = F_t P_{t-1|t-1} F_t\trans + Q_t$。
+\end{document}

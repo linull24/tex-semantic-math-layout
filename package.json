@@ -1,0 +1,46 @@
+{
+  "name": "math-layout",
+  "version": "0.1.0",
+  "description": "TeX-in / TeX-out automatic line breaking for long display math, using expression structure, real XeLaTeX measurements, and a W3C-MathML-style best-fit solver.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "bin": {
+    "math-layout": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src tests scripts validation",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check:fixtures": "tsx scripts/check-fixtures.ts",
+    "check:corpus": "tsx scripts/check-corpus.ts",
+    "validate": "tsx validation/run-validation.ts",
+    "gate": "npm run lint && npm run typecheck && npm run test",
+    "verify": "npm run gate && npm run check:fixtures && npm run check:corpus && npm run validate",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@unified-latex/unified-latex-types": "1.8.4",
+    "@unified-latex/unified-latex-util-parse": "1.8.4",
+    "@unified-latex/unified-latex-util-print-raw": "1.8.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "@typescript-eslint/eslint-plugin": "^8.70.0",
+    "@typescript-eslint/parser": "^8.70.0",
+    "eslint": "^9.39.5",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
+  }
+}

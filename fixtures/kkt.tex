@@ -1,0 +1,22 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\begin{document}
+约束优化问题的拉格朗日函数与互补松弛条件如下。
+
+\begin{equation}\label{eq:kkt-lagrangian}
+\mathcal{L}(x, \lambda, \nu) = f(x) + \sum_{i=1}^{m} \lambda_i g_i(x) + \sum_{j=1}^{p} \nu_j h_j(x) + \frac{\rho}{2} \sum_{i=1}^{m} \left( \max\{0, g_i(x)\} \right)^2 + \frac{\rho}{2} \sum_{j=1}^{p} h_j(x)^2 + \frac{\mu}{2} \left\| x - x^{\star} \right\|^2 + \sum_{i=1}^{m} \frac{\lambda_i^2}{2\rho} + \sum_{j=1}^{p} \frac{\nu_j^2}{2\rho}
+\end{equation}
+
+互补松弛条件要求对所有 $i = 1, \ldots, m$ 都有下式成立。
+
+\begin{equation}
+\lambda_i^{\star} g_i(x^{\star}) = 0, \qquad \lambda_i^{\star} \ge 0, \qquad \nabla f(x^{\star}) + \sum_{i=1}^{m} \lambda_i^{\star} \nabla g_i(x^{\star}) + \sum_{j=1}^{p} \nu_j^{\star} \nabla h_j(x^{\star}) = 0
+\end{equation}
+
+可行域非空时，KKT 条件是局部最优的必要条件。
+\end{document}

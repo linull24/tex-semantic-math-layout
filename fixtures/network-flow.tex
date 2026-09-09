@@ -1,0 +1,24 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\newcommand{\dplus}{\delta^{+}}
+\newcommand{\dminus}{\delta^{-}}
+\begin{document}
+网络流问题中的流量守恒约束与容量约束可写在一起。
+
+\begin{equation}\label{eq:flow}
+\sum_{a \in \dplus(v)} x_a - \sum_{a \in \dminus(v)} x_a = b_v, \qquad \forall v \in V, \qquad 0 \le x_a \le u_a, \qquad \forall a \in A, \qquad \sum_{v \in V} b_v = 0, \qquad \sum_{a \in A} c_a x_a \le C_{\max}, \qquad x_a \ge 0
+\end{equation}
+
+最小费用流的对偶变量满足如下关系，其中 $\pi_v$ 为节点势。
+
+\begin{equation}
+\sum_{a \in A} c_a x_a = \sum_{v \in V} b_v \pi_v - \sum_{a \in A} u_a \max\left\{ 0, \pi_{t(a)} - \pi_{s(a)} - c_a \right\} + \sum_{v \in V} \left| \dplus(v) \right|
+\end{equation}
+
+守恒式对每个节点 $v \in V$ 均成立。
+\end{document}

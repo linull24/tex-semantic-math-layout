@@ -1,0 +1,22 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\newcommand{\trans}{^{\top}}
+\newcommand{\pinv}{^{\dagger}}
+\begin{document}
+Koopman 算子的有限维近似可由动态模态分解得到。
+
+\begin{equation}\label{eq:dmd}
+\tilde{A} = \tilde{U} \tilde{\Sigma} \tilde{V}\trans = \sum_{k=1}^{r} \tilde{\sigma}_k \tilde{u}_k \tilde{v}_k\trans = \Psi_X\pinv \Psi_Y = \left( \Psi_X\trans \Psi_X \right)^{-1} \Psi_X\trans \Psi_Y + \epsilon I + \epsilon \left( \Psi_X\trans \Psi_X + \lambda I \right)^{-1} \Psi_X\trans \Psi_Y + \left\| \Psi_Y - \Psi_X \tilde{A} \right\|_F^2 + \lambda \left\| \tilde{A} \right\|_* + \left\| \Psi_X\trans \Psi_X - I \right\|_F
+\end{equation}
+
+其中奇异值按降序排列，谱分解给出模态的时间演化。
+
+\begin{equation}
+\Psi_X = \begin{pmatrix} \mid & \mid & & \mid \\ \phi_1 & \phi_2 & \cdots & \phi_r \\ \mid & \mid & & \mid \end{pmatrix}, \qquad \tilde{A} = \Phi \Lambda \Phi^{-1} + \mathcal{O}\left( \epsilon \right)
+\end{equation}
+\end{document}

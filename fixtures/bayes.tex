@@ -1,0 +1,21 @@
+\documentclass[11pt,a4paper,scheme=plain,fontset=fandol,no-math]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{mathtools}
+\usepackage{eqnlines}
+\usepackage[libertinus]{termes-otf}
+\usepackage[restoremathleading=true]{zhlineskip}
+\AtBeginDocument{\fontsize{11pt}{14.5pt}\selectfont}
+\newcommand{\E}{\mathbb{E}}
+\begin{document}
+贝叶斯后验由似然与先验的乘积给出，边缘似然出现在分母。
+
+\begin{equation}\label{eq:posterior}
+p(\theta \mid \mathcal{D}) = \frac{p(\mathcal{D} \mid \theta) \, p(\theta)}{\int_{\Theta} p(\mathcal{D} \mid \vartheta) \, p(\vartheta) \, \mathrm{d}\vartheta} = \frac{\prod_{i=1}^{n} p(y_i \mid x_i, \theta) \, p(\theta)}{\E_{\vartheta \sim p(\vartheta)}\left[ \prod_{i=1}^{n} p(y_i \mid x_i, \vartheta) \right]} + \frac{1}{2}\log\left( \frac{\left| \Sigma_0 \right|}{\left| \Sigma_{\theta \mid \mathcal{D}} \right|} \right) + \mathrm{KL}\left( q(\theta) \,\|\, p(\theta) \right) + \sum_{i=1}^{n} \log p(y_i \mid x_i, \theta) - \frac{1}{2}\log \det \Sigma_{\theta \mid \mathcal{D}}
+\end{equation}
+
+条件期望与条件方差的关系如下。
+
+\begin{equation}
+\operatorname{Var}\left[ \theta \mid \mathcal{D} \right] = \E\left[ \theta^2 \mid \mathcal{D} \right] - \left( \E\left[ \theta \mid \mathcal{D} \right] \right)^2 = \int_{\Theta} \theta^2 \, p(\theta \mid \mathcal{D}) \, \mathrm{d}\theta - \mu_{\theta \mid \mathcal{D}}^2
+\end{equation}
+\end{document}

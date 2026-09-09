@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.tmp/
+.math-layout-cache/
+*.log
+*.aux
+*.xdv
+*.out
+*.idx
+*.hd
+*.toc
+*.fls
+*.fdb_latexmk
+.DS_Store
